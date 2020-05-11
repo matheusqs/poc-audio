@@ -1,0 +1,7 @@
+{
+  "name": "Poc-Audio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
