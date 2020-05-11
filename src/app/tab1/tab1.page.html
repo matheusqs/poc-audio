@@ -2,8 +2,8 @@
   <section class="component">
     <div style="margin: auto;">
       {{ state?.readableCurrentTime }}
-      <mat-slider class="time-slider" min="0" [max]="state?.duration" step="1" [value]="state?.currentTime"
-        (input)="onSliderChangeEnd($event)" disabled></mat-slider>
+      <mat-slider min="0" [max]="state?.duration" [value]="state?.currentTime">
+      </mat-slider>
       {{ state?.readableDuration }}
     </div>
     <div class="controls">
@@ -19,6 +19,5 @@
     </div>
   </section>
   <button (click)="load()">LOAD</button>
-  <mat-slider class="time-slider" min="0" max="10" step="1" [value]="state?.currentTime"
-    (input)="onSliderChangeEnd($event)" disabled></mat-slider>
+  <mat-slider min="0" max="10"></mat-slider>
 </div>
