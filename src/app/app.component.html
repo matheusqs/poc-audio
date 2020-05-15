@@ -1,3 +1,37 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <div class="body">
+    <section class="component">
+      <div class="clock">
+        <mat-slider
+          color="primary"
+          class="time-slider"
+          min="0"
+          [max]="state?.duration"
+          step="1"
+          [value]="state?.currentTime"
+          disabled
+        ></mat-slider>
+        <div class="times">
+          <p>{{ state?.readableCurrentTime }}</p>
+          <p>{{ state?.readableDuration }}</p>
+        </div>
+      </div>
+      <div class="controls">
+        <button (click)="rewind()">
+          <mat-icon>replay_10</mat-icon>
+        </button>
+        <button (click)="play()" *ngIf="!state.playing; else pause">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+        <ng-template #pause>
+          <button (click)="pauseAudio()">
+            <mat-icon>pause</mat-icon>
+          </button>
+        </ng-template>
+        <button>
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+    </section>
+  </div>
 </ion-app>
